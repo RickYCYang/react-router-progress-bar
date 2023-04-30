@@ -14,13 +14,16 @@ export default function CustomRoutes({ children }) {
   const location = useLocation();
   const [showProgressbar, setShowProgress] = useState(true);
   /** prevLocation is for tracking whether the route path has been changed or not */
-  const [prevLocation, setPrevLocation] = useState(location.pathname);
+  const [prevLocation, setPrevLocation] = useState('');
 
   // console.log('prevLocation', prevLocation);
   // console.log('location.pathname', location.pathname);
 
   useEffect(() => {
     setPrevLocation(location.pathname);
+    if (location.pathname === prevLocation) {
+      setPrevLocation('');
+    }
     setShowProgress(true);
   }, [location]);
 

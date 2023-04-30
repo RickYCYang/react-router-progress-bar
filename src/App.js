@@ -7,6 +7,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <nav style={{ display: 'flex', gap: '36px' }}>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
         <CustomRoutes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
